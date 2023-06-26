@@ -1,0 +1,31 @@
+def get_params(num_users: int, num_items: int):
+    return {
+        "train_epochs": 500,
+        "batches_per_step": 1,
+        "use_seed": False,
+        "batch_size": 10000,
+        "eval_batch_size": 1,
+        "learning_rate": 0.001,
+        "mf_dim": 30,  # latent factors in GMF part (general matrix factorization)
+        "model_layers": [int(layer) for layer in ["64", "64", "64", "64"]],
+        "mf_regularization": 0.0,
+        "mlp_reg_layers": [float(reg) for reg in ["0.", "0.", "0.", "0."]],
+        "num_neg": 4,
+        "num_gpus": 0,
+        "use_tpu": False,
+        "tpu": None,
+        "tpu_zone": None,
+        "tpu_gcp_project": None,
+        "beta1": 0.9,
+        "beta2": 0.999,
+        "epsilon": 0.1,
+        "match_mlperf": False,
+        "use_xla_for_gpu": False,
+        "clone_model_in_keras_dist_strat": False,
+        "epochs_between_evals": 1,
+        "turn_off_distribution_strategy": True,
+        "num_users": num_users,
+        "num_items": num_items,
+        "loss": 'mse',
+        "train_size": 0.95
+    }
